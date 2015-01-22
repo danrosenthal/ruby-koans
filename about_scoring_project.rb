@@ -31,18 +31,18 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   dice.sort!
-  puts "Roll: " + dice.inspect
+  #puts "Roll: " + dice.inspect
   return 0 if(dice == [] || dice == nil)
   return 1000 + score(dice[3..-1]) if(dice[0..2] == [1,1,1])
-  puts dice.inspect  
+  #puts dice.inspect  
   return (dice[0] * 100) + score(dice[3..-1]) if(dice[0] == dice[2])
-  puts dice.inspect
+  #puts dice.inspect
   return 50 + score(dice[1..-1]) if(dice[0] == 5)
-  puts dice.inspect
+  #puts dice.inspect
   return 100 + score(dice[1..-1]) if(dice[0] == 1)
-  puts dice.inspect
+  #puts dice.inspect
   return 0 + score(dice[1..-1])  
-  puts dice.inspect
+  #puts dice.inspect
 end
 
 class AboutScoringProject < Neo::Koan
