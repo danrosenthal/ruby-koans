@@ -19,7 +19,7 @@ class Proxy
   attr_reader :messages
  
   def initialize(target_object)
-    @object = target_object
+    @object = target_object # you need to select something to call
     @messages = []
   end
    
